@@ -20,7 +20,7 @@
             Welcome to Employee Registration Form
         </h2>
         <div class="card-body border border-light">
-            <form th:object="${employee}">
+            <form th:object="${employee}" th:action="@{/employee/list}" method="post">
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="inputFirstName">First Name</label>

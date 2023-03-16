@@ -1,9 +1,22 @@
 package com.joshguna.bootstrap;
 
+import com.joshguna.model.Employee;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class DataGenerator {
+
+    private static List<Employee> employeeList = new ArrayList<>();
+
+    public static void saveEmployee(Employee employee) {
+        employeeList.add(employee);
+    }
+
+    public static List<Employee> readAllEmployees() {
+        return employeeList;
+    }
 
     public static List<String> getAllStates() {
 
