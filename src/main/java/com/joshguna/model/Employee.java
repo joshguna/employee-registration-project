@@ -18,8 +18,11 @@ public class Employee {
 //    @NotBlank       -> anything accepts, except null, empty and blank space
 
     @NotBlank
-    @Size(max = 12, min = 2)
+    @Size(max = 20, min = 2)
     private String firstName;
+
+    @NotBlank
+    @Size(max = 20, min = 2)
     private String lastName;
 
     //to show that it's a date, putting yyyy is important
