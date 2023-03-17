@@ -1,7 +1,11 @@
 package com.joshguna.model;
 
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
 @Data
@@ -9,8 +13,17 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class Employee {
 
+//    @NotNull        -> anything accepts, except null
+//    @NotEmpty       -> anything accepts, except null and empty string
+//    @NotBlank       -> anything accepts, except null, empty and blank space
+
+    @NotBlank
+    @Size(max = 12, min = 2)
     private String firstName;
     private String lastName;
+
+    //to show that it's a date, putting yyyy is important
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthday;
     private String email;
     private String password;

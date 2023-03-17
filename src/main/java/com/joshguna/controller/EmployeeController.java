@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
+
 @Controller
 @RequestMapping("/employee")
 public class EmployeeController {
@@ -24,7 +26,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/list")
-    public String employeeList(@ModelAttribute("employee") Employee employee, Model model) {
+    public String employeeList(@Valid @ModelAttribute("employee") Employee employee, Model model) {
 
         //saving Employee
         DataGenerator.saveEmployee(employee);
